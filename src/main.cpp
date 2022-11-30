@@ -1,17 +1,36 @@
 #include <iostream>
 #include <SDL2/SDL.h>
+#include "CApp.h"
+ 
+CApp::CApp() {
+    window = nullptr;
 
-
-using namespace std;
-
-int main() {
-
-    if(SDL_Init(SDL_INIT_EVERYTHING) > 0) {
-        cout << "sdl init failed with error: " << SDL_GetError() << endl;
-        return EXIT_FAILURE;
+    Running = true;
+}
+ 
+int CApp::OnExecute() {
+    if(OnInit() == false) {
+        return -1;
     }
-    
-    cout << "SDL2 setup"<< endl;
-
-    return EXIT_SUCCESS;
+ 
+    SDL_Event Event;
+ 
+    while(Running) {
+        while(SDL_PollEvent(&Event)) {
+            OnEvent(&Event);
+        }
+ 
+        OnLoop();
+        OnRender();
+    }
+ 
+    OnCleanup();
+ 
+    return 0;
+}
+ 
+int main(int argc, char* argv[]) {
+    CApp theApp;
+ 
+    return theApp.OnExecute();
 }
