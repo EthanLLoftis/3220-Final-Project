@@ -5,6 +5,16 @@
 CApp::CApp() {
     window = nullptr;
 
+    windowSurface = nullptr;
+
+    renderer = nullptr;
+
+    playerSurface = nullptr;
+
+    enemySurface = nullptr;
+
+    texture = nullptr;
+
     Running = true;
 }
  
@@ -19,7 +29,7 @@ int CApp::OnExecute() {
         while(SDL_PollEvent(&Event)) {
             OnEvent(&Event);
         }
- 
+    
         OnLoop();
         OnRender();
     }
