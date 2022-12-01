@@ -1,14 +1,9 @@
-#include "CApp.h"
 #include "helpers.h"
+#include "CApp.h"
+#include <iostream>
 using namespace std;
- 
-bool CApp::OnInit() {
-    if (SDL_Init(SDL_INIT_EVERYTHING) < 0 ){
-        cout << SDL_GetError() << endl;
-        return false;
-    }
 
-    window = SDL_CreateWindow("Game Window", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 640, 480, SDL_WINDOW_RESIZABLE | SDL_WINDOW_OPENGL);
+bool renderPlayer(SDL_Renderer* renderer, SDL_Window* window) {
 
     if (window == NULL){
         cout << SDL_GetError() << endl;
@@ -34,4 +29,4 @@ bool CApp::OnInit() {
     SDL_RenderPresent(renderer);
 
     return true;
-}
+};

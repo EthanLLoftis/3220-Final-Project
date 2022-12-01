@@ -3,6 +3,6 @@
 
     #include <SDL2/SDL.h>
 
-    SDL_Surface* loadPlayer(char const *file);
+    bool renderPlayer(SDL_Renderer* renderer, SDL_Window* window);
 
 #endif

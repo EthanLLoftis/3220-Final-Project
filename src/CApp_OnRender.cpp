@@ -1,5 +1,6 @@
 #include "CApp.h"
+#include "helpers.h"
  
 void CApp::OnRender() {
-    SDL_BlitSurface(playerSurface, NULL, windowSurface, NULL);
+    renderPlayer(renderer, window);
 }
