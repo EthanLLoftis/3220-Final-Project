@@ -10,7 +10,7 @@
 
 2. brew install sdl2_image
 
--- commands compile and run program:
+-- commands to compile and run program:
 
 1. make
 
