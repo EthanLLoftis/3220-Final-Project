@@ -9,3 +9,10 @@
 1. brew install sdl2
 
 2. brew install sdl2_image
+
+-- commands compile and run program:
+
+1. make
+
+2. ./build/debug/play
+    
